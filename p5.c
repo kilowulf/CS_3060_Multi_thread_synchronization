@@ -6,7 +6,7 @@
  * Program takes values from stdin, performs factorization on those values and displays them to stdout
  * - 3 threads:
  *      - main thread creates producer and consumer thread. sends passed values to producer via buffer
- *      - producer thread takes values from buffer an performs factorization. values and factors saved to second buffer
+ *      - producer thread takes values from buffer and performs factorization. values and factors saved to second buffer
  *      - consumer thread takes values from prod-cons buffer to display back to terminal
  *
  * - 2 buffers:
@@ -163,6 +163,8 @@ int factorize_operation(void *number_of_factors)
         }
         return 0;
     }
+    // return a default value if the input pointer is null
+    return -1;
 }
 
 // taking values from array_variables buffer, factorizing, pushing results to array_factors buffer
